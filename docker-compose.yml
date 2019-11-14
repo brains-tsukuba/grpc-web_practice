@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  proxy:
+    build: ./proxy
+    expose:
+    - "80"
+    ports:
+    - "80:80"
+    networks:
+      envoymesh:
+        aliases:
+          - proxy
+  backend:
+    build: 
+      context: .
+      dockerfile: ./backend/Dockerfile
+    expose:
+    - "8080"
+    ports:
+    - "8080:8080"
+    networks:
+      envoymesh:
+        aliases:
+          - backend
+
+networks:
+  envoymesh: {}

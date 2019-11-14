@@ -1,0 +1,36 @@
+Arguments: 
+  /home/koyamaso/.nvs/node/10.16.0/x64/bin/node /home/koyamaso/.nvs/default/bin/yarn add protoc-gen-ts
+
+PATH: 
+  /home/koyamaso/.nvs/default/bin:/home/koyamaso/.nvs/default/bin:/home/koyamaso/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/koyamaso/bin:/home/koyamaso/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  10.16.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/protoc-gen-ts: Not found
+      at Request.params.callback [as _callback] (/home/koyamaso/.nvs/node/10.16.0/x64/lib/node_modules/yarn/lib/cli.js:66830:18)
+      at Request.self.callback (/home/koyamaso/.nvs/node/10.16.0/x64/lib/node_modules/yarn/lib/cli.js:140464:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/home/koyamaso/.nvs/node/10.16.0/x64/lib/node_modules/yarn/lib/cli.js:141436:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/home/koyamaso/.nvs/node/10.16.0/x64/lib/node_modules/yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1129:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
