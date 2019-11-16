@@ -13,15 +13,14 @@ import HelloWorld from './components/HelloWorld.vue';
 
 import { GreeterClient } from "./proto/EchoServiceClientPb";
 import { HelloRequest, HelloReply } from "./proto/echo_pb";
-var grpc = require('grpc');
 
 @Component({})
 export default class App extends Vue {
   message: any = ""
   client: GreeterClient;
-
-  mounted() { 
-    this.client = new GreeterClient("http://localhost:8080")
+  constructor() {
+    super();
+    this.client = new GreeterClient(`http://${window.location.hostname}/grpc`)
   }
 
   sayHello(): Promise<object> {
