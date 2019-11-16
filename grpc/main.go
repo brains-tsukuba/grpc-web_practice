@@ -6,21 +6,25 @@ import (
 	"log"
 	"net"
 
+	pb "github.com/brains-tsukuba/grpc-web_practice/grpc/proto"
 	"google.golang.org/grpc"
 )
 
 type server struct{}
 
-func (s *server) SayHello(ctx context.Context, in *HelloRequest) (*HelloResponse, error) {
-	t := fmt.Sprintf("hello, %s", in.GetText())
-	return &HelloResponse{Text: t}, nil
+func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
+	t := fmt.Sprintf("hello, %s", in.GetName())
+	return &pb.HelloReply{Message: t}, nil
 }
 
 func main() {
 	s := grpc.NewServer()
 	lis, err := net.Listen("tcp", "0.0.0.0:50051")
-	RegisterGreeterServer(s, &server{})
-	if err := s.Serve(lis); err != nil {
+	pb.RegisterGreeterServer(s, &server{})
+	if err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
+	if err = s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
 }
