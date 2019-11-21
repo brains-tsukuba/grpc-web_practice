@@ -23,6 +23,14 @@ services:
       envoymesh:
         aliases:
           - backend
+  grpc:
+    build: ./grpc
+    expose:
+    - "50051"
+    networks:
+      envoymesh:
+        aliases:
+          - grpc
 
 networks:
   envoymesh: {}

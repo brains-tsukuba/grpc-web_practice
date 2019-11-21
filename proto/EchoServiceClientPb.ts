@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for main
+ * @fileoverview gRPC-Web generated client stub for echo
  * @enhanceable
  * @public
  */
@@ -47,7 +47,7 @@ export class GreeterClient {
                response: HelloReply) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/main.Greeter/SayHello',
+        '/echo.Greeter/SayHello',
       request,
       metadata || {},
       this.methodInfoSayHello,
